@@ -1,86 +1,71 @@
-# wav_to_text
-Here’s a README file template for your "wav to text" project that you can use on GitHub:
+Here’s an enhanced `README.md` file with more details:
 
----
+```markdown
+# Speech to Text Application
 
-# WAV to Text Transcription Tool
-
-A machine learning project that converts WAV audio files to text transcriptions using advanced speech recognition models. This project leverages **Facebook's Wav2Vec2 model** to provide accurate transcriptions for various audio files, enhancing accessibility and usability.
-
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+## Description
+The Speech to Text application is designed to convert audio recordings into written text using advanced deep learning models. It enables users to upload audio files and receive quick transcriptions, facilitating accessibility for various applications like note-taking, content creation, and more.
 
 ## Features
+- **File Upload**: Users can upload audio files .wav format.
+- **Real-time Transcription**: The app processes audio files and displays the transcription immediately.
+- **User-Friendly Interface**: Built with a responsive design for seamless navigation on any device.
+- **Model Efficiency**: Utilizes state-of-the-art models for high accuracy in transcription.
+- **Error Handling**: Provides informative error messages for unsupported file types or issues during processing.
 
-- End-to-end transcription of WAV audio files
-- High accuracy achieved through machine learning techniques
-- User-friendly interface built in Jupyter Notebook
+## Tools and Technologies
+- **Programming Language**: Python
+- **Framework**: Flask (for backend)
+- **Deep Learning**: TensorFlow (for transcription model)
+- **Audio Processing Libraries**: 
+  - `librosa`: For audio analysis and feature extraction.
+  - `scipy`: For reading and writing .wav files.
+- **Frontend Technologies**: 
+  - HTML: For structure.
+  - CSS: For styling.
+  - JavaScript: For interactivity.
+- **Deployment Platform**: Vercel
 
 ## Installation
+To install and run the project locally:
 
-1. **Clone the repository**
+1. Clone the repository:
    ```bash
-   git clone https://github.com/DhaneshGore/wav_to_text.git
-   cd wav_to_text
+   git clone https://github.com/DhaneshGore/Speech_To_Text_DL.git
    ```
-
-2. **Set up a virtual environment** (if not already set up)
+2. Navigate to the project directory:
    ```bash
-   conda create -p venv python==3.7 -y
-   conda activate venv
+   cd Speech_To_Text_DL
    ```
-
-3. **Install the required dependencies**
+3. Create a virtual environment (optional but recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # For Linux/Mac
+   venv\Scripts\activate     # For Windows
+   ```
+4. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
+5. Run the application:
+   ```bash
+   python app.py
+   ```
 
 ## Usage
-
-1. **Run the Jupyter Notebook**
-   - Open `Facebook's_Wav2vec2_model_speech_to_text_application.ipynb` in a Jupyter environment.
-   - Follow the instructions to load audio files and run the transcription model.
-
-2. **Test with Example Audio Files**
-   - Place your `.wav` files in the specified directory within the project.
-   - Run the cells to preprocess audio files and obtain transcriptions.
-
-## Technologies Used
-
-- **Python**
-- **Wav2Vec2**: Deep learning model for speech recognition
-- **Jupyter Notebook**
-- **SciPy**: For audio data handling
-- **IPython.display**: For audio playback in Jupyter
-- **pandas**: For data manipulation (if used)
-- **NumPy**: For numerical computing (if used)
-
-## Project Structure
-
-```
-wav_to_text/
-├── data/               # Directory for audio files
-├── models/             # Pre-trained models and configurations
-├── notebooks/          # Jupyter Notebooks for experimentation
-├── requirements.txt    # Dependencies for the project
-└── README.md           # Project documentation
-```
+1. Access the application through your web browser at `http://localhost:5000`.
+2. Use the upload button to select your audio file.
+3. Click the "Transcribe" button to start the transcription process.
 
 ## Contributing
-
-Contributions are welcome! Please feel free to open issues or submit pull requests.
+Contributions are welcome! Feel free to open an issue or submit a pull request for improvements or features.
 
 ## License
-
 This project is licensed under the MIT License.
 
----
+## Contact
+For any inquiries, please contact me at [dhanesh9765@gmail.com](mailto:dhanesh9765@gmail.com).
 
-Feel free to modify any sections to better fit your project specifics or preferences! Let me know if you need any additional changes.
+```
+
+This version includes additional details on usage, installation steps, and contact information, making it more informative and user-friendly. Adjust any sections as necessary!
