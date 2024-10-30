@@ -1,0 +1,177 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    /* Light background */
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    /* Dark background */
+    color: #e0e0e0;
+    /* Light text */
+    overflow: hidden;
+    /* Prevent scrolling in dark mode */
+    background: url('https://mrwallpaper.com/images/hd/earth-surface-4k-space-bshep7a66431s5uk.jpg') no-repeat center center fixed;
+    /* Space image */
+    background-size: cover;
+    /* Ensure the image covers the background */
+}
+
+/* Center the main heading */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Form styling */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    /* Center the form */
+    background: #fff;
+    /* Light form background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+body.dark-mode form {
+    background: #1e1e1e;
+    /* Dark form background */
+}
+
+/* Input file styling */
+input[type="file"] {
+    display: block;
+    margin: 15px 0;
+    /* Spacing between elements */
+    width: 100%;
+    /* Full width */
+    border: 1px solid #ccc;
+    /* Light border */
+    border-radius: 4px;
+    padding: 10px;
+    /* Padding for the input */
+    transition: border-color 0.3s ease;
+    /* Smooth transition */
+}
+
+body.dark-mode input[type="file"] {
+    border-color: #444;
+    /* Dark border */
+    background: #333;
+    /* Dark background for input */
+    color: #e0e0e0;
+    /* Light text */
+}
+
+/* Button styling */
+button {
+    background-color: #28a745;
+    /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    /* Full width */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+button:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+}
+
+body.dark-mode button {
+    background-color: #3a803a;
+    /* Darker green for dark mode */
+}
+
+/* Loading spinner */
+.loader {
+    border: 8px solid #f3f3f3;
+    /* Light grey */
+    border-top: 8px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    display: none;
+    /* Hidden by default */
+    margin: 0 auto;
+    /* Center the spinner */
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Result text styling */
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    /* Default color for light mode */
+}
+
+/* Dark mode result text */
+body.dark-mode #result {
+    color: #ffffff;
+    /* White text for dark mode */
+}
+
+/* Typing effect */
+.typing {
+    border-right: 2px solid #555;
+    display: inline-block;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    /* Default color for footer */
+}
+
+/* Dark mode footer */
+body.dark-mode footer {
+    color: #e0e0e0;
+    /* Light footer text */
+}
+
+/* Ensure footer stays visible */
+footer {
+    position: relative;
+    /* Allow for proper layout */
+    z-index: 1;
+    /* Ensure it appears above background */
+}

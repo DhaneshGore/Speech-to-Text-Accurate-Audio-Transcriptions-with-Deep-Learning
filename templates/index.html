@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.Wav to Text</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to the CSS file -->
+</head>
+
+<body>
+    <h2>Upload a .wav file for Transcription</h2>
+
+    <!-- Dark/Light mode toggle -->
+    <button id="toggle-mode">Switch to Dark Mode</button>
+
+    <form action="/transcribe" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".wav" required>
+        <button type="submit">Transcribe</button>
+    </form>
+
+    <div class="loader" id="loader" style="display: none;">Loading...</div> <!-- Loading spinner -->
+    <div id="result"></div>
+
+    <footer>
+        <p>Dhanesh @ 2024</p>
+    </footer>
+
+    <script>
+        // Toggle dark/light mode
+        const toggleButton = document.getElementById("toggle-mode");
+        const body = document.body;
+
+        toggleButton.onclick = () => {
+            body.classList.toggle("dark-mode");
+            toggleButton.textContent = body.classList.contains("dark-mode")
+                ? "Switch to Light Mode"
+                : "Switch to Dark Mode";
+        };
+
+        // This script submits the form and displays the transcription result
+        document.querySelector("form").onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const loader = document.getElementById("loader");
+            const resultDiv = document.getElementById("result");
+
+            // Show the loading spinner
+            loader.style.display = "block";
+            resultDiv.textContent = ""; // Clear previous results
+
+            const response = await fetch('/transcribe', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            loader.style.display = "none"; // Hide the loading spinner
+
+            // Show the typing effect for the transcription result
+            if (result.transcription) {
+                typeText(result.transcription);
+            } else {
+                resultDiv.textContent = result.error;
+            }
+        };
+
+        function typeText(text) {
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = ""; // Clear previous results
+            let index = 0;
+            const typingSpeed = 50; // Typing speed in milliseconds
+
+            function type() {
+                if (index < text.length) {
+                    resultDiv.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    resultDiv.innerHTML = resultDiv.innerHTML.replace(/&nbsp;$/, ""); // Remove trailing space
+                    resultDiv.classList.remove("typing"); // Stop caret blinking
+                }
+            }
+
+            resultDiv.classList.add("typing"); // Add typing effect class
+            type(); // Start typing
+        }
+    </script>
+</body>
+
+</html>
