@@ -2,4 +2,3 @@ Flask
 torchaudio
 librosa
 pydub
-wav2vec2_inference
