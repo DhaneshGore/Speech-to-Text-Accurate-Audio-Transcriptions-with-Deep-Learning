@@ -3,7 +3,7 @@ Here’s a README file template for your "wav to text" project that you can use 
 
 ---
 
-# WAV to Text ML Transcription Tool
+# WAV to Text Transcription Tool
 
 A machine learning project that converts WAV audio files to text transcriptions using advanced speech recognition models. This project leverages **Facebook's Wav2Vec2 model** to provide accurate transcriptions for various audio files, enhancing accessibility and usability.
 
