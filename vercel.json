@@ -2,14 +2,21 @@
     "version": 2,
     "builds": [
         {
-            "src": "Dockerfile",
-            "use": "@vercel/static-build"
+            "src": "app.py",
+            "use": "@vercel/python"
         }
     ],
     "routes": [
         {
+            "src": "/transcribe",
+            "methods": [
+                "POST"
+            ],
+            "dest": "app.py"
+        },
+        {
             "src": "/(.*)",
-            "dest": "/index.html"
+            "dest": "app.py"
         }
     ]
 }
