@@ -9,6 +9,9 @@ app = Flask(__name__)
 # Ensure the 'uploads' folder exists for saving uploaded files
 os.makedirs("uploads", exist_ok=True)
 
+# Limit maximum file size (e.g., 16MB)
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+
 @app.route('/')
 def index():
     # Render the HTML template for file upload
@@ -22,6 +25,10 @@ def transcribe():
     
     file = request.files['file']
     filename = file.filename
+
+    # Validate file type (you can expand this list)
+    if not (filename.endswith('.wav') or filename.endswith('.mp3') or filename.endswith('.ogg')):
+        return jsonify({'error': 'Unsupported file type. Please upload a .wav, .mp3, or .ogg file.'}), 400
 
     # Define the path for saving the uploaded file
     input_path = os.path.join('uploads', filename)
@@ -47,8 +54,8 @@ def transcribe():
     except Exception as e:
         return jsonify({'error': f'An error occurred during transcription: {e}'}), 500
     finally:
-        # Optionally delete the converted file to save space
-        if input_path != filename and os.path.exists(input_path):
+        # Clean up: Delete the uploaded file to save space
+        if os.path.exists(input_path):
             os.remove(input_path)
 
 if __name__ == '__main__':
