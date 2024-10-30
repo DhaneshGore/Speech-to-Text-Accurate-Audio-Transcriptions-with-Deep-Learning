@@ -1,3 +1,3 @@
-Flask
-librosa
-pydub
+Flask==2.3.2
+librosa==0.10.0
+pydub==0.25.1
