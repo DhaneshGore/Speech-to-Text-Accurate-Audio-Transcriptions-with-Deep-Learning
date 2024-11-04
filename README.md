@@ -19,8 +19,8 @@ The Speech to Text application converts audio recordings into written text using
 - **Framework**: Flask (backend)  
 - **Deep Learning**: TensorFlow (transcription model)  
 - **Audio Processing Libraries**: librosa, scipy  
-- **Frontend Technologies**: HTML, CSS, JavaScript  
-- **Deployment Platform**: Vercel  
+- **Frontend Technologies**: HTML, CSS  
+- **Deployment Platform**: Vercel #i was trying to use it but it not support Flask and Djanjo for Backend
 
 **Installation**:  
 1. Clone the repository:  
