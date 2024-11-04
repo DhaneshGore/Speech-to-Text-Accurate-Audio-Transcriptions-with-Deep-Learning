@@ -8,7 +8,7 @@ Here's a detailed README file for your GitHub repository without the markdown fo
 The Speech to Text application converts audio recordings into written text using advanced deep learning models. It enables users to upload audio files and receive quick transcriptions, making it suitable for note-taking, content creation, and more.
 
 **Features**:  
-- Upload audio files in .mp3 or .wav format.  
+- Upload audio files in .wav format.  
 - Real-time transcription display.  
 - User-friendly interface for easy navigation.  
 - High accuracy using state-of-the-art models.  
